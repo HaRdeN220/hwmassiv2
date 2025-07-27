@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -27,10 +28,15 @@ public class Main {
         System.out.println("Средняя сумма трат за месяц составила " + averagePayoutMonth + " рублей.");
         //3 dz
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        char letter = reverseFullName[0];
-        for (int i = (reverseFullName.length - 1); i >= 0; i--) {
-            letter = reverseFullName[i];
-            System.out.print(letter);
+        char letter;
+        System.out.println(Arrays.toString(reverseFullName));
+        for (int i=0;i< reverseFullName.length/2;i++){
+            letter=reverseFullName[i];
+            reverseFullName[i]=reverseFullName[reverseFullName.length-1-i];
+            reverseFullName[reverseFullName.length-1-i]=letter;
+        }
+        for (int i=0;i< reverseFullName.length;i++){
+            System.out.print(reverseFullName[i]);
         }
         //4 dz
     }
